@@ -11,13 +11,26 @@
   <!-- Font awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon-birdman.png" />
+  <link rel="shortcut icon" href="assets/favicon-birdman.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/favicon-birdman.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Birdman | Proteína 100% vegetal" />
+  <meta name="twitter:description"
+    content="Energía natural y rendimiento con proteína 100% vegetal inspirada en la fuerza de las aves." />
+  <meta name="twitter:image" content="https://tusitio.com/assets/og-image-birdman.png" />
+
   <!-- Google fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
 
   <!-- style complied css -->
   <link rel="stylesheet" href="css/style.css">
   <title>Birdman improvements</title>
+  <meta name="description"
+    content="Descubre Birdman: proteína vegetal premium inspirada en la naturaleza. Potencia tu rendimiento." />
 </head>
 
 <body>
@@ -25,8 +38,14 @@
   <!-- Blue Topbar -->
   <div class="topbar text-center py-2">
     <div class="container d-flex justify-content-between align-items-center flex-wrap">
-      <span>Envío gratis en órdenes mayores a $599</span>
-      <a href="#" class="text-white">Suscríbete y ahorra 10%</a>
+      <span>
+        <i class="fa-solid fa-truck-fast me-2"></i>
+        Envío gratis en órdenes mayores a $599
+      </span>
+      <a href="#" class="text-white text-decoration-none">
+        <i class="fa-solid fa-ticket me-2"></i>
+        Suscríbete y ahorra 10%
+      </a>
     </div>
   </div>
 
@@ -73,11 +92,8 @@
     <img src="assets/hero.webp" alt="Hero" class="img-fluid w-100 hero-image"
       style="max-height: 600px; object-fit: cover" />
 
-    <div class="hero-overlay"></div>
-
     <div class="hero-text text-center text-white">
-      <h1 class="hero-title">LOVE ANIMALS</h1>
-      <h2 class="hero-subtitle">EAT PLANTS</h2>
+      <h1 class="hero-title">LOVE ANIMALS <br> EAT PLANTS</h1>
     </div>
   </section>
 
@@ -93,45 +109,52 @@
           </div>
           <h3>Falcon Protein</h3>
           <p>Potencia tu día con la fuerza del halcón.</p>
-        </div>
-
-        <div class="carousel-slide" data-bg="performance">
-          <div class="carousel-image">
-            <img src="assets/performance.webp" alt="Falcon Performance">
-          </div>
-          <h3>Falcon Performance</h3>
-          <p>Rinde al máximo con nuestra fórmula avanzada.</p>
-        </div>
-
-        <div class="carousel-slide" data-bg="fitmingo">
-          <div class="carousel-image">
-            <img src="assets/fitmingo.webp" alt="Fitmingo">
-          </div>
-          <h3>Fitmingo</h3>
-          <p>Color, sabor y salud para tus entrenamientos.</p>
-        </div>
-
-        <div class="carousel-slide" data-bg="peacock">
-          <div class="carousel-image">
-            <img src="assets/peacock.webp" alt="Peacock">
-          </div>
-          <h3>Peacock</h3>
-          <p>Equilibra tu estilo de vida con elegancia.</p>
-        </div>
-
-        <div class="carousel-slide" data-bg="parrot">
-          <div class="carousel-image">
-            <img src="assets/parrot.webp" alt="Parrot">
-          </div>
-          <h3>Parrot</h3>
-          <p>Energía y vitalidad natural para ti.</p>
+          <a href="#" class="btn-falcon">Comprar ahora</a>
         </div>
       </div>
 
-      <button class="carousel-arrow left" id="prev-slide" aria-label="Anterior">&lt;</button>
-      <button class="carousel-arrow right" id="next-slide" aria-label="Siguiente">&gt;</button>
 
-      <div class="carousel-dots mt-4" id="carousel-dots"></div>
+      <div class="carousel-slide" data-bg="performance">
+        <div class="carousel-image">
+          <img src="assets/performance.webp" alt="Falcon Performance">
+        </div>
+        <h3>Falcon Performance</h3>
+        <p>Rinde al máximo con nuestra fórmula avanzada.</p>
+        <a href="#" class="btn-performance">Comprar ahora</a>
+      </div>
+
+      <div class="carousel-slide" data-bg="fitmingo">
+        <div class="carousel-image">
+          <img src="assets/fitmingo.webp" alt="Fitmingo">
+        </div>
+        <h3>Fitmingo</h3>
+        <p>Color, sabor y salud para tus entrenamientos.</p>
+        <a href="#" class="btn-fitmingo">Comprar ahora</a>
+      </div>
+
+      <div class="carousel-slide" data-bg="peacock">
+        <div class="carousel-image">
+          <img src="assets/peacock.webp" alt="Peacock">
+        </div>
+        <h3>Peacock</h3>
+        <p>Equilibra tu estilo de vida con elegancia.</p>
+        <a href="#" class="btn-peacock">Comprar ahora</a>
+      </div>
+
+      <div class="carousel-slide" data-bg="parrot">
+        <div class="carousel-image">
+          <img src="assets/parrot.webp" alt="Parrot">
+        </div>
+        <h3>Parrot</h3>
+        <p>Energía y vitalidad natural para ti.</p>
+        <a href="#" class="btn-parrot">Comprar ahora</a>
+      </div>
+    </div>
+
+    <button class="carousel-arrow left" id="prev-slide" aria-label="Anterior">&lt;</button>
+    <button class="carousel-arrow right" id="next-slide" aria-label="Siguiente">&gt;</button>
+
+    <div class="carousel-dots mt-4" id="carousel-dots"></div>
     </div>
   </section>
 
@@ -207,17 +230,17 @@
   </footer>
 
   <!-- Botones fixed -->
-<!-- Botón inferior izquierdo -->
-<a href="#" class="btn btn-primary-birdman fixed-btn left">
-  <i class="bi bi-chat-left-text"></i>
-  <span>Asesórate con un experto</span>
-</a>
+  <!-- Botón inferior izquierdo -->
+  <a href="#" class="btn btn-primary-birdman fixed-btn left">
+    <i class="bi bi-chat-left-text"></i>
+    <span>Asesórate con un experto</span>
+  </a>
 
-<!-- Botón inferior derecho -->
-<a href="#" class="btn btn-primary-birdman fixed-btn right">
-  <i class="fas fa-feather"></i>
-  <span>Conoce tu ave</span>
-</a>
+  <!-- Botón inferior derecho -->
+  <a href="#" class="btn btn-primary-birdman fixed-btn right">
+    <i class="fas fa-feather"></i>
+    <span>Conoce tu ave</span>
+  </a>
   </section>
 
   <!-- Bootstrap 5.3.2 Bundle JS CDN (con Popper incluido) -->

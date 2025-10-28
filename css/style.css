@@ -68,7 +68,7 @@ body {
   padding: 0;
 }
 
-.btn-base, .btn-fitmingo, .btn-primary-birdman {
+.btn-base, .btn-parrot, .btn-fitmingo, .btn-peacock, .btn-performance, .btn-falcon, .btn-primary-birdman {
   font-weight: 600;
   padding: 0.5rem 1.25rem;
   border-radius: 2rem;
@@ -77,12 +77,13 @@ body {
   align-items: center;
   gap: 0.5rem;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
-.btn-base:focus, .btn-fitmingo:focus, .btn-primary-birdman:focus {
+.btn-base:focus, .btn-parrot:focus, .btn-fitmingo:focus, .btn-peacock:focus, .btn-performance:focus, .btn-falcon:focus, .btn-primary-birdman:focus {
   outline: none;
   box-shadow: 0 0 0 0.25rem rgba(25, 75, 136, 0.35);
 }
-.btn-base i, .btn-fitmingo i, .btn-primary-birdman i {
+.btn-base i, .btn-parrot i, .btn-fitmingo i, .btn-peacock i, .btn-performance i, .btn-falcon i, .btn-primary-birdman i {
   font-size: 1rem;
 }
 
@@ -100,6 +101,45 @@ body {
   color: rgb(242, 242, 242);
 }
 
+.btn-falcon {
+  background-color: rgb(69, 127, 160);
+  color: white;
+  border: none;
+}
+.btn-falcon:hover {
+  background-color: rgb(61.3165938865, 112.8580786026, 142.1834061135);
+  transform: scale(1.05);
+}
+.btn-falcon:focus {
+  box-shadow: 0 0 0 0.25rem rgba(69, 127, 160, 0.35);
+}
+
+.btn-performance {
+  background-color: rgb(70, 67, 64);
+  color: white;
+  border: none;
+}
+.btn-performance:hover {
+  background-color: rgb(56.6791044776, 54.25, 51.8208955224);
+  transform: scale(1.05);
+}
+.btn-performance:focus {
+  box-shadow: 0 0 0 0.25rem rgba(70, 67, 64, 0.35);
+}
+
+.btn-peacock {
+  background-color: rgb(163, 177, 178);
+  color: white;
+  border: none;
+}
+.btn-peacock:hover {
+  background-color: rgb(149.1183431953, 165.2307692308, 166.3816568047);
+  transform: scale(1.05);
+}
+.btn-peacock:focus {
+  box-shadow: 0 0 0 0.25rem rgba(163, 177, 178, 0.35);
+}
+
 .btn-fitmingo {
   background-color: rgb(240, 138, 138);
   color: white;
@@ -107,14 +147,25 @@ body {
 }
 .btn-fitmingo:hover {
   background-color: rgb(237.1022727273, 115.3977272727, 115.3977272727);
+  transform: scale(1.05);
 }
 .btn-fitmingo:focus {
   box-shadow: 0 0 0 0.25rem rgba(240, 138, 138, 0.35);
 }
 
-/* ==========================================================
-    BOTONES FIJOS DE NAVEGACIÓN
-   ========================================================== */
+.btn-parrot {
+  background-color: rgb(70, 157, 112);
+  color: white;
+  border: none;
+}
+.btn-parrot:hover {
+  background-color: rgb(62.1365638767, 139.3634361233, 99.4185022026);
+  transform: scale(1.05);
+}
+.btn-parrot:focus {
+  box-shadow: 0 0 0 0.25rem rgba(70, 157, 112, 0.35);
+}
+
 .fixed-btn {
   position: fixed;
   bottom: 1.5rem;
@@ -243,14 +294,6 @@ body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  filter: brightness(0.85);
-}
-.hero-section .hero-overlay {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  z-index: 1;
 }
 .hero-section .hero-text {
   position: absolute;
@@ -262,22 +305,25 @@ body {
   color: white;
   text-transform: uppercase;
   animation: fadeInHero 1.2s ease-out forwards;
+  /* Ajustes solo para mobile */
 }
 .hero-section .hero-text .hero-title {
   font-family: "Poppins", sans-serif;
   font-weight: 800;
-  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-size: clamp(3rem, 6vw, 5rem);
   letter-spacing: 3px;
   line-height: 1.1;
   animation: textFadeInUp 1.2s ease forwards;
 }
-.hero-section .hero-text .hero-subtitle {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  letter-spacing: 2px;
-  color: #a6f1d2;
-  animation: textFadeInUp 1.4s ease forwards;
+@media (max-width: 768px) {
+  .hero-section .hero-text {
+    top: 55%; /* baja un poco el bloque */
+    transform: translate(-50%, -55%);
+  }
+  .hero-section .hero-text .hero-title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    line-height: 1.1;
+  }
 }
 
 body {
@@ -433,7 +479,7 @@ body {
 }
 
 .bg-parrot {
-  background: linear-gradient(120deg, rgb(111, 232, 188), rgb(243, 192, 162));
+  background: linear-gradient(120deg, rgb(70, 157, 112), rgb(243, 192, 162));
   background-size: 300% 300%;
   animation: gradientWave 10s ease-in-out infinite;
 }
