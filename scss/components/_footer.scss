@@ -1,0 +1,93 @@
+.site-footer {
+    position: relative;
+    overflow: hidden;
+    color: white;
+    font-family: $font-stack;
+    background: url('../assets/footer.webp') center/cover no-repeat;
+    background-attachment: fixed;
+    opacity: 0;
+    transform: translateY(60px) scale(0.98);
+    filter: blur(8px);
+    transition: 
+      opacity 1.5s ease,
+      transform 1.5s ease,
+      filter 1.5s ease;
+  
+    &.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+  
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(25, 75, 136, 0.55);
+      z-index: 0;
+    }
+  
+    .container {
+      position: relative;
+      z-index: 1;
+    }
+  
+    /*(links, form, etc.) */
+    .footer-heading {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+  
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  
+      li {
+        margin-bottom: 0.4rem;
+  
+        a {
+          color: white;
+          font-size: 0.875rem;
+          text-decoration: none;
+  
+          &:hover {
+            color: $secondary;
+          }
+        }
+      }
+    }
+  
+    .footer-form {
+      input {
+        border-radius: 2rem;
+        padding: 0.4rem 1rem;
+        font-size: 0.875rem;
+      }
+    }
+  
+    .footer-social a {
+      color: white;
+      font-size: 1.2rem;
+      margin-right: 0.75rem;
+  
+      &:hover {
+        color: $secondary;
+      }
+    }
+  
+    .footer-divider {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  
+    .footer-legal-links a {
+      color: white;
+      text-decoration: none;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  

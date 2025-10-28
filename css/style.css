@@ -1,4 +1,167 @@
 @charset "UTF-8";
+/* ==========================================================
+     VARIABLES GLOBALES
+   ========================================================== */
+/* Animaciones reutilizadas */
+@keyframes textFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInHero {
+  0% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* Animación con movimiento diagonal tipo oleaje */
+@keyframes gradientWave {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* Animación texto fadein */
+@keyframes textFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+html, body {
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(254, 254, 254);
+  color: rgb(139, 139, 139);
+  margin: 0;
+  padding: 0;
+}
+
+.btn-base, .btn-fitmingo, .btn-primary-birdman {
+  font-weight: 600;
+  padding: 0.5rem 1.25rem;
+  border-radius: 2rem;
+  font-family: "Poppins", sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+.btn-base:focus, .btn-fitmingo:focus, .btn-primary-birdman:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.25rem rgba(25, 75, 136, 0.35);
+}
+.btn-base i, .btn-fitmingo i, .btn-primary-birdman i {
+  font-size: 1rem;
+}
+
+.btn-primary-birdman {
+  background-color: rgb(25, 75, 136);
+  color: white;
+  border: none;
+}
+.btn-primary-birdman:hover {
+  background-color: rgb(101, 127, 189);
+}
+.btn-primary-birdman:focus {
+  box-shadow: 0 0 0 0.25rem rgba(25, 75, 136, 0.35);
+}
+
+.btn-fitmingo {
+  background-color: rgb(240, 138, 138);
+  color: white;
+  border: none;
+}
+.btn-fitmingo:hover {
+  background-color: rgb(237.1022727273, 115.3977272727, 115.3977272727);
+}
+.btn-fitmingo:focus {
+  box-shadow: 0 0 0 0.25rem rgba(240, 138, 138, 0.35);
+}
+
+/* Components / Sections */
+.topbar {
+  background-color: rgb(25, 75, 136);
+  color: white;
+  font-size: 0.875rem;
+}
+.topbar a {
+  color: white;
+  text-decoration: underline;
+}
+.topbar a:hover {
+  color: white;
+}
+
+.topbar .container {
+  justify-content: center;
+}
+@media (min-width: 576px) {
+  .topbar .container {
+    justify-content: space-between;
+  }
+}
+
+.navbar {
+  background-color: rgb(254, 254, 254);
+}
+.navbar .nav-link {
+  color: rgb(25, 75, 136);
+}
+.navbar .nav-link:hover {
+  color: rgb(101, 127, 189);
+}
+
+.navbar .bi {
+  font-size: 1.2rem;
+  color: rgb(25, 75, 136);
+  transition: color 0.3s ease;
+}
+.navbar .bi:hover {
+  color: rgb(101, 127, 189);
+}
+
+.navbar .btn,
+.navbar .bi {
+  vertical-align: middle;
+}
+
+.navbar .form-control {
+  border-radius: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 0.875rem;
+  font-family: "Poppins", sans-serif;
+  transition: box-shadow 0.3s ease;
+}
+.navbar .form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(25, 75, 136, 0.35);
+  border-color: rgb(25, 75, 136);
+}
+
 .hero-section {
   position: relative;
   overflow: hidden;
@@ -43,59 +206,6 @@
   letter-spacing: 2px;
   color: #a6f1d2;
   animation: textFadeInUp 1.4s ease forwards;
-}
-
-/* Animaciones reutilizadas */
-@keyframes textFadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes fadeInHero {
-  0% {
-    opacity: 0;
-    transform: scale(1.05);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-.topbar {
-  background-color: rgb(25, 75, 136);
-  color: white;
-  font-size: 0.875rem;
-}
-.topbar a {
-  color: white;
-  text-decoration: underline;
-}
-.topbar a:hover {
-  color: white;
-}
-
-.topbar .container {
-  justify-content: center;
-}
-@media (min-width: 576px) {
-  .topbar .container {
-    justify-content: space-between;
-  }
-}
-
-.navbar {
-  background-color: rgb(254, 254, 254);
-}
-.navbar .nav-link {
-  color: rgb(25, 75, 136);
-}
-.navbar .nav-link:hover {
-  color: rgb(101, 127, 189);
 }
 
 body {
@@ -225,35 +335,6 @@ body {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-/* Animación con movimiento diagonal tipo oleaje */
-@keyframes gradientWave {
-  0% {
-    background-position: 0% 50%;
-  }
-  25% {
-    background-position: 50% 100%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  75% {
-    background-position: 50% 0%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-/* Animación texto fadein */
-@keyframes textFadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 /* Fondos animados por proteína */
 .bg-falcon {
   background: linear-gradient(120deg, rgb(69, 127, 160), rgb(162, 143, 99));
@@ -274,7 +355,7 @@ body {
 }
 
 .bg-peacock {
-  background: linear-gradient(120deg, rgb(61, 102, 162), rgb(241, 232, 188));
+  background: linear-gradient(120deg, rgb(163, 177, 178), rgb(241, 232, 188));
   background-size: 300% 300%;
   animation: gradientWave 10s ease-in-out infinite;
 }
@@ -285,12 +366,11 @@ body {
   animation: gradientWave 10s ease-in-out infinite;
 }
 
-/* Footer con imagen, overlay y fade-in al hacer scroll */
 .site-footer {
   position: relative;
   overflow: hidden;
   color: white;
-  font-family: Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
   background: url("../assets/footer.webp") center/cover no-repeat;
   background-attachment: fixed;
   opacity: 0;
@@ -341,13 +421,6 @@ body {
   padding: 0.4rem 1rem;
   font-size: 0.875rem;
 }
-.site-footer .footer-form button {
-  background-color: white;
-  color: rgb(25, 75, 136);
-}
-.site-footer .footer-form button:hover {
-  background-color: rgb(242, 242, 242);
-}
 .site-footer .footer-social a {
   color: white;
   font-size: 1.2rem;
@@ -365,73 +438,4 @@ body {
 }
 .site-footer .footer-legal-links a:hover {
   text-decoration: underline;
-}
-
-.btn-base, .btn-fitmingo, .btn-primary-birdman, .site-footer .footer-form button {
-  font-weight: 600;
-  padding: 0.5rem 1.25rem;
-  border-radius: 2rem;
-  font-family: Helvetica, sans-serif;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: all 0.3s ease;
-}
-.btn-base:focus, .btn-fitmingo:focus, .btn-primary-birdman:focus, .site-footer .footer-form button:focus {
-  outline: none;
-  box-shadow: 0 0 0 0.25rem rgba(25, 75, 136, 0.35);
-}
-.btn-base i, .btn-fitmingo i, .btn-primary-birdman i, .site-footer .footer-form button i {
-  font-size: 1rem;
-}
-
-.btn-primary-birdman {
-  background-color: rgb(25, 75, 136);
-  color: white;
-  border: none;
-}
-.btn-primary-birdman:hover {
-  background-color: rgb(101, 127, 189);
-}
-.btn-primary-birdman:focus {
-  box-shadow: 0 0 0 0.25rem rgba(25, 75, 136, 0.35);
-}
-
-.btn-fitmingo {
-  background-color: rgb(240, 138, 138);
-  color: white;
-  border: none;
-}
-.btn-fitmingo:hover {
-  background-color: rgb(237.1022727273, 115.3977272727, 115.3977272727);
-}
-.btn-fitmingo:focus {
-  box-shadow: 0 0 0 0.25rem rgba(240, 138, 138, 0.35);
-}
-
-.navbar .bi {
-  font-size: 1.2rem;
-  color: rgb(25, 75, 136);
-  transition: color 0.3s ease;
-}
-.navbar .bi:hover {
-  color: rgb(101, 127, 189);
-}
-
-.navbar .btn,
-.navbar .bi {
-  vertical-align: middle;
-}
-
-.navbar .form-control {
-  border-radius: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  font-size: 0.875rem;
-  font-family: Helvetica, sans-serif;
-  transition: box-shadow 0.3s ease;
-}
-.navbar .form-control:focus {
-  box-shadow: 0 0 0 0.25rem rgba(25, 75, 136, 0.35);
-  border-color: rgb(25, 75, 136);
 }/*# sourceMappingURL=style.css.map */

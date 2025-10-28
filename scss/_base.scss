@@ -1,4 +1,12 @@
-.btn-base {
+html, body {
+    font-family: $font-stack;
+    background-color: $background-color;
+    color: $text-gray;
+    margin: 0;
+    padding: 0;
+  }
+
+  .btn-base {
     font-weight: 600;
     padding: 0.5rem 1.25rem;
     border-radius: 2rem;
@@ -50,35 +58,5 @@
     }
   }
   
-//   navbar icons
-  .navbar .bi {
-    font-size: 1.2rem;
-    color: $primary;
-    transition: color 0.3s ease;
-  
-    &:hover {
-      color: $secondary;
-    }
-  }
 
-//   align icons in buttons
-.navbar .btn,
-.navbar .bi {
-  vertical-align: middle;
-}
-  
-// navbar search input
-.navbar .form-control {
-    border-radius: 2rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    font-size: 0.875rem;
-    font-family: $font-stack;
-    transition: box-shadow 0.3s ease;
-  
-    &:focus {
-      box-shadow: $focus-shadow;
-      border-color: $primary;
-    }
-  }
   

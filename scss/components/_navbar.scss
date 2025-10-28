@@ -1,0 +1,64 @@
+.topbar {
+    background-color: $primary;
+    color: white;
+    font-size: 0.875rem;
+  
+    a {
+      color: white;
+      text-decoration: underline;
+  
+      &:hover {
+        color: lighten(white, 10%);
+      }
+    }
+  }
+  .topbar .container {
+    justify-content: center;
+  
+    @media (min-width: 576px) {
+      justify-content: space-between;
+    }
+  }
+    
+.navbar {
+    background-color: $background-color;
+  
+    .nav-link {
+      color: $primary;
+  
+      &:hover {
+        color: $secondary;
+      }
+    }
+  }
+//   navbar icons
+.navbar .bi {
+    font-size: 1.2rem;
+    color: $primary;
+    transition: color 0.3s ease;
+  
+    &:hover {
+      color: $secondary;
+    }
+  }
+
+//   align icons in buttons
+.navbar .btn,
+.navbar .bi {
+  vertical-align: middle;
+}
+  
+// navbar search input
+.navbar .form-control {
+    border-radius: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 0.875rem;
+    font-family: $font-stack;
+    transition: box-shadow 0.3s ease;
+  
+    &:focus {
+      box-shadow: $focus-shadow;
+      border-color: $primary;
+    }
+  }

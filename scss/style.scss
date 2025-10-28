@@ -1,3 +1,9 @@
-@import 'variables'; 
-@import 'layout';
-@import 'components';
+@import 'variables';
+@import 'animations';
+@import 'base';
+
+/* Components / Sections */
+@import 'components/navbar';
+@import 'components/hero';
+@import 'components/carousel';
+@import 'components/footer';
