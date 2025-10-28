@@ -74,3 +74,21 @@ startAutoPlay();
   window.addEventListener('scroll', revealFooter);
   revealFooter(); // por si ya está visible al cargar la página
 
+  // Mostrar botones fixed al hacer scroll
+  document.addEventListener("DOMContentLoaded", () => {
+    const fixedButtons = document.querySelectorAll(".fixed-btn");
+    const showAfter = 200; // px de scroll para mostrar los botones
+
+    window.addEventListener("scroll", () => {
+      const scrolled = window.scrollY;
+
+      fixedButtons.forEach(btn => {
+        if (scrolled > showAfter) {
+          btn.classList.remove("hidden");
+        } else {
+          btn.classList.add("hidden");
+        }
+      });
+    });
+  });
+

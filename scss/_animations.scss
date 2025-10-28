@@ -53,4 +53,10 @@
     }
   }  
   
-  
+  /* Animación botones fixed */
+  @keyframes fixedBtnFade {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
