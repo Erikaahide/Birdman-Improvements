@@ -1,0 +1,29 @@
+/* --- Carrusel de Creatinas --- */
+.carousel-creatinas {
+    @extend .carousel-proteins; // hereda todo el estilo del carrusel de proteínas
+}
+
+/* Fondos animados por creatina */
+.bg-creatina {
+    background: linear-gradient(120deg, $creatina, $secondary-creatina);
+    background-size: 300% 300%;
+    animation: gradientWave 10s ease-in-out infinite;
+}
+
+.bg-creatina-pink {
+    background: linear-gradient(120deg, $creatina-pink, $secondary-creatina);
+    background-size: 300% 300%;
+    animation: gradientWave 10s ease-in-out infinite;
+}
+
+.bg-creatina-lemon {
+    background: linear-gradient(120deg, $creatina-lemon, $secondary-creatina);
+    background-size: 300% 300%;
+    animation: gradientWave 10s ease-in-out infinite;
+}
+
+.bg-creatina-watermelon {
+    background: linear-gradient(120deg, $creatina-watermelon, $secondary-creatina);
+    background-size: 300% 300%;
+    animation: gradientWave 10s ease-in-out infinite;
+}

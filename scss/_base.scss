@@ -52,50 +52,51 @@ body {
     background-color: $falcon;
     color: white;
     border: none;
-  
+
     &:hover {
-      background-color: darken($falcon, 5%);
-      transform: scale(1.05);
+        background-color: darken($falcon, 5%);
+        transform: scale(1.05);
     }
-  
+
     &:focus {
-      box-shadow: $falcon-focus;
+        box-shadow: $falcon-focus;
     }
-  }
+}
+
 // btn performance
 .btn-performance {
     @extend .btn-base;
     background-color: $performance;
     color: white;
     border: none;
-  
+
     &:hover {
-      background-color: darken($performance, 5%);
-      transform: scale(1.05);
+        background-color: darken($performance, 5%);
+        transform: scale(1.05);
     }
-  
+
     &:focus {
-      box-shadow: $performance-focus;
+        box-shadow: $performance-focus;
     }
-  }
+}
 
 //   btn peacok
-  .btn-peacock {
+.btn-peacock {
     @extend .btn-base;
     background-color: $peacock;
     color: white;
     border: none;
-  
+
     &:hover {
-      background-color: darken($peacock, 5%);
-      transform: scale(1.05);
+        background-color: darken($peacock, 5%);
+        transform: scale(1.05);
     }
-  
+
     &:focus {
-      box-shadow: $peacock-focus;
+        box-shadow: $peacock-focus;
     }
-  }
-  
+}
+
 //   btn fitmingo
 .btn-fitmingo {
     @extend .btn-base;
@@ -112,6 +113,7 @@ body {
         box-shadow: $fitmingo-focus;
     }
 }
+
 //   btn parrot
 .btn-parrot {
     @extend .btn-base;
@@ -126,6 +128,75 @@ body {
 
     &:focus {
         box-shadow: $parrot-focus;
+    }
+}
+
+// botones creatinas
+//   btn creatina
+.btn-creatina {
+    @extend .btn-base;
+    background-color: $creatina;
+    color: white;
+    border: none;
+
+    &:hover {
+        background-color: darken($creatina, 5%);
+        transform: scale(1.05);
+    }
+
+    &:focus {
+        box-shadow: $secondary-creatina;
+    }
+}
+
+//   btn creatina pink
+.btn-creatina-pink {
+    @extend .btn-base;
+    background-color: $creatina-pink;
+    color: white;
+    border: none;
+
+    &:hover {
+        background-color: darken($creatina-pink, 5%);
+        transform: scale(1.05);
+    }
+
+    &:focus {
+        box-shadow: $secondary-creatina;
+    }
+}
+
+//   btn creatina lemon
+.btn-creatina-lemon {
+    @extend .btn-base;
+    background-color: $creatina-lemon;
+    color: white;
+    border: none;
+
+    &:hover {
+        background-color: darken($creatina-lemon, 5%);
+        transform: scale(1.05);
+    }
+
+    &:focus {
+        box-shadow: $secondary-creatina;
+    }
+}
+
+//   btn creatina watermelon
+.btn-creatina-watermelon {
+    @extend .btn-base;
+    background-color: $creatina-watermelon;
+    color: white;
+    border: none;
+
+    &:hover {
+        background-color: darken($creatina-watermelon, 5%);
+        transform: scale(1.05);
+    }
+
+    &:focus {
+        box-shadow: $secondary-creatina;
     }
 }
 
@@ -193,5 +264,55 @@ body {
         i {
             font-size: 1.2rem;
         }
+    }
+}
+
+.benefits-bar {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    border-top: 1px solid $secondary;
+    border-bottom: 1px solid $primary;
+    background-color: $gray;
+    /* gris claro */
+    padding: 0.6rem 0;
+}
+
+.benefits-track {
+    display: flex;
+    align-items: center;
+}
+
+.benefits-content {
+    display: inline-flex;
+    gap: 2rem;
+    animation: scrollBenefits 25s linear infinite;
+}
+
+.benefits-content span {
+    font-weight: 700;
+    color: $primary;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.benefits-content i {
+    color: $secondary;
+    margin-right: 0.4rem;
+    font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .benefits-content {
+        animation-duration: 35s;
+        /* más lento en móvil */
+    }
+
+    .benefits-content span {
+        font-size: 0.8rem;
     }
 }

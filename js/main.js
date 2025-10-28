@@ -1,61 +1,99 @@
-const slides = document.querySelectorAll(".carousel-slide");
-const section = document.querySelector(".carousel-proteins");
-const nextBtn = document.getElementById("next-slide");
-const prevBtn = document.getElementById("prev-slide");
-const dotsContainer = document.getElementById("carousel-dots");
 
-let current = 0;
-let autoPlay;
+// Función genérica para crear cualquier carrusel
+function initCarousel({
+  sectionSelector,
+  slidesSelector,
+  nextBtnId,
+  prevBtnId,
+  dotsContainerId,
+  baseClass
+}) {
+  const section = document.querySelector(sectionSelector);
+  const slides = section.querySelectorAll(slidesSelector);
+  const nextBtn = document.getElementById(nextBtnId);
+  const prevBtn = document.getElementById(prevBtnId);
+  const dotsContainer = document.getElementById(dotsContainerId);
 
-// Crear dots dinámicamente
-slides.forEach((_, index) => {
-  const dot = document.createElement("div");
-  dot.classList.add("dot");
-  if (index === 0) dot.classList.add("active");
-  dot.addEventListener("click", () => {
-    current = index;
-    updateSlide(current);
+  let current = 0;
+  let autoPlay;
+
+  // Crear dots dinámicamente
+  slides.forEach((_, index) => {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    if (index === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => {
+      current = index;
+      updateSlide(current);
+    });
+    dotsContainer.appendChild(dot);
   });
-  dotsContainer.appendChild(dot);
+
+  const dots = dotsContainer.querySelectorAll(".dot");
+
+  // Actualiza slide activo
+  function updateSlide(index) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[index].classList.add("active");
+
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[index].classList.add("active");
+
+    const bgClass = "bg-" + slides[index].dataset.bg;
+    section.className = `${baseClass} ${bgClass} text-white py-5`;
+  }
+
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    updateSlide(current);
+  }
+
+  function prevSlide() {
+    current = (current - 1 + slides.length) % slides.length;
+    updateSlide(current);
+  }
+
+  nextBtn.addEventListener("click", nextSlide);
+  prevBtn.addEventListener("click", prevSlide);
+
+  // AutoPlay
+  function startAutoPlay() {
+    autoPlay = setInterval(nextSlide, 5000);
+  }
+
+  function stopAutoPlay() {
+    clearInterval(autoPlay);
+  }
+
+  section.addEventListener("mouseenter", stopAutoPlay);
+  section.addEventListener("mouseleave", startAutoPlay);
+
+  startAutoPlay();
+}
+
+//
+// 🧃 Iniciar carrusel de proteínas
+//
+initCarousel({
+  sectionSelector: ".carousel-proteins",
+  slidesSelector: ".carousel-slide",
+  nextBtnId: "next-slide",
+  prevBtnId: "prev-slide",
+  dotsContainerId: "carousel-dots",
+  baseClass: "carousel-proteins"
 });
-const dots = document.querySelectorAll(".dot");
 
-function updateSlide(index) {
-  slides.forEach(slide => slide.classList.remove("active"));
-  slides[index].classList.add("active");
-
-  dots.forEach(dot => dot.classList.remove("active"));
-  dots[index].classList.add("active");
-
-  const bgClass = "bg-" + slides[index].dataset.bg;
-  section.className = `carousel-proteins ${bgClass} text-white py-5`;
-}
-
-function nextSlide() {
-  current = (current + 1) % slides.length;
-  updateSlide(current);
-}
-
-function prevSlide() {
-  current = (current - 1 + slides.length) % slides.length;
-  updateSlide(current);
-}
-
-nextBtn.addEventListener("click", nextSlide);
-prevBtn.addEventListener("click", prevSlide);
-
-function startAutoPlay() {
-  autoPlay = setInterval(nextSlide, 5000);
-}
-
-function stopAutoPlay() {
-  clearInterval(autoPlay);
-}
-
-section.addEventListener("mouseenter", stopAutoPlay);
-section.addEventListener("mouseleave", startAutoPlay);
-
-startAutoPlay();
+//
+// ⚡ Iniciar carrusel de creatinas
+//
+initCarousel({
+  sectionSelector: ".carousel-creatinas",
+  slidesSelector: ".carousel-slide",
+  nextBtnId: "next-slide-creatina",
+  prevBtnId: "prev-slide-creatina",
+  dotsContainerId: "carousel-dots-creatina",
+  baseClass: "carousel-creatinas"
+});
 
 
   // Footer fade-in al hacer scroll

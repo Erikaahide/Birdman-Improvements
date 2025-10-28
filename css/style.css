@@ -59,6 +59,15 @@
     transform: translateY(0);
   }
 }
+/* Animación de desplazamiento infinito */
+@keyframes scrollBenefits {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
 html,
 body {
   font-family: "Poppins", sans-serif;
@@ -68,7 +77,7 @@ body {
   padding: 0;
 }
 
-.btn-base, .btn-parrot, .btn-fitmingo, .btn-peacock, .btn-performance, .btn-falcon, .btn-primary-birdman {
+.btn-base, .btn-creatina-watermelon, .btn-creatina-lemon, .btn-creatina-pink, .btn-creatina, .btn-parrot, .btn-fitmingo, .btn-peacock, .btn-performance, .btn-falcon, .btn-primary-birdman {
   font-weight: 600;
   padding: 0.5rem 1.25rem;
   border-radius: 2rem;
@@ -79,11 +88,11 @@ body {
   transition: all 0.3s ease;
   text-decoration: none;
 }
-.btn-base:focus, .btn-parrot:focus, .btn-fitmingo:focus, .btn-peacock:focus, .btn-performance:focus, .btn-falcon:focus, .btn-primary-birdman:focus {
+.btn-base:focus, .btn-creatina-watermelon:focus, .btn-creatina-lemon:focus, .btn-creatina-pink:focus, .btn-creatina:focus, .btn-parrot:focus, .btn-fitmingo:focus, .btn-peacock:focus, .btn-performance:focus, .btn-falcon:focus, .btn-primary-birdman:focus {
   outline: none;
   box-shadow: 0 0 0 0.25rem rgba(25, 75, 136, 0.35);
 }
-.btn-base i, .btn-parrot i, .btn-fitmingo i, .btn-peacock i, .btn-performance i, .btn-falcon i, .btn-primary-birdman i {
+.btn-base i, .btn-creatina-watermelon i, .btn-creatina-lemon i, .btn-creatina-pink i, .btn-creatina i, .btn-parrot i, .btn-fitmingo i, .btn-peacock i, .btn-performance i, .btn-falcon i, .btn-primary-birdman i {
   font-size: 1rem;
 }
 
@@ -166,6 +175,58 @@ body {
   box-shadow: 0 0 0 0.25rem rgba(70, 157, 112, 0.35);
 }
 
+.btn-creatina {
+  background-color: rgb(53, 53, 53);
+  color: white;
+  border: none;
+}
+.btn-creatina:hover {
+  background-color: rgb(40.25, 40.25, 40.25);
+  transform: scale(1.05);
+}
+.btn-creatina:focus {
+  box-shadow: rgb(235, 212, 212);
+}
+
+.btn-creatina-pink {
+  background-color: rgb(244, 189, 224);
+  color: white;
+  border: none;
+}
+.btn-creatina-pink:hover {
+  background-color: rgb(240.3571428571, 167.1428571429, 213.7337662338);
+  transform: scale(1.05);
+}
+.btn-creatina-pink:focus {
+  box-shadow: rgb(235, 212, 212);
+}
+
+.btn-creatina-lemon {
+  background-color: rgb(171, 215, 149);
+  color: white;
+  border: none;
+}
+.btn-creatina-lemon:hover {
+  background-color: rgb(156.3287671233, 208.0136986301, 130.4863013699);
+  transform: scale(1.05);
+}
+.btn-creatina-lemon:focus {
+  box-shadow: rgb(235, 212, 212);
+}
+
+.btn-creatina-watermelon {
+  background-color: rgb(239, 141, 142);
+  color: white;
+  border: none;
+}
+.btn-creatina-watermelon:hover {
+  background-color: rgb(235.8615384615, 118.6384615385, 119.8346153846);
+  transform: scale(1.05);
+}
+.btn-creatina-watermelon:focus {
+  box-shadow: rgb(235, 212, 212);
+}
+
 .fixed-btn {
   position: fixed;
   bottom: 1.5rem;
@@ -225,6 +286,54 @@ body {
   }
 }
 
+.benefits-bar {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid rgb(101, 127, 189);
+  border-bottom: 1px solid rgb(25, 75, 136);
+  background-color: rgb(242, 242, 242);
+  /* gris claro */
+  padding: 0.6rem 0;
+}
+
+.benefits-track {
+  display: flex;
+  align-items: center;
+}
+
+.benefits-content {
+  display: inline-flex;
+  gap: 2rem;
+  animation: scrollBenefits 25s linear infinite;
+}
+
+.benefits-content span {
+  font-weight: 700;
+  color: rgb(25, 75, 136);
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.benefits-content i {
+  color: rgb(101, 127, 189);
+  margin-right: 0.4rem;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .benefits-content {
+    animation-duration: 35s;
+    /* más lento en móvil */
+  }
+  .benefits-content span {
+    font-size: 0.8rem;
+  }
+}
 /* Components / Sections */
 .topbar {
   background-color: rgb(25, 75, 136);
@@ -332,7 +441,7 @@ body {
   color: rgb(139, 139, 139);
 }
 
-.carousel-proteins {
+.carousel-proteins, .carousel-creatinas {
   position: relative;
   overflow: hidden;
   transition: background 1s ease-in-out;
@@ -341,18 +450,18 @@ body {
   /* Flechas laterales */
   /* Dots indicadores */
 }
-.carousel-proteins h2 {
+.carousel-proteins h2, .carousel-creatinas h2 {
   font-weight: 700;
   letter-spacing: 0.5px;
 }
-.carousel-proteins .carousel-inner {
+.carousel-proteins .carousel-inner, .carousel-creatinas .carousel-inner {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   text-align: center;
 }
-.carousel-proteins .carousel-slide {
+.carousel-proteins .carousel-slide, .carousel-creatinas .carousel-slide {
   display: none;
   flex-direction: column;
   align-items: center;
@@ -361,26 +470,26 @@ body {
   transform: scale(0.95);
   transition: all 0.8s ease;
 }
-.carousel-proteins .carousel-slide.active {
+.carousel-proteins .carousel-slide.active, .carousel-creatinas .carousel-slide.active {
   display: flex;
   opacity: 1;
   transform: scale(1);
   animation: fadeInUp 0.8s ease-in-out forwards;
 }
-.carousel-proteins .carousel-slide.active h3, .carousel-proteins .carousel-slide.active p {
+.carousel-proteins .carousel-slide.active h3, .carousel-creatinas .carousel-slide.active h3, .carousel-proteins .carousel-slide.active p, .carousel-creatinas .carousel-slide.active p {
   opacity: 0;
   animation: textFadeInUp 0.9s ease forwards;
 }
-.carousel-proteins .carousel-slide.active h3 {
+.carousel-proteins .carousel-slide.active h3, .carousel-creatinas .carousel-slide.active h3 {
   animation-delay: 0.2s;
 }
-.carousel-proteins .carousel-slide.active p {
+.carousel-proteins .carousel-slide.active p, .carousel-creatinas .carousel-slide.active p {
   animation-delay: 0.4s;
 }
-.carousel-proteins .carousel-slide .carousel-image {
+.carousel-proteins .carousel-slide .carousel-image, .carousel-creatinas .carousel-slide .carousel-image {
   margin-bottom: 1rem;
 }
-.carousel-proteins .carousel-slide .carousel-image img {
+.carousel-proteins .carousel-slide .carousel-image img, .carousel-creatinas .carousel-slide .carousel-image img {
   width: clamp(220px, 35vw, 420px);
   height: auto;
   -o-object-fit: contain;
@@ -388,23 +497,23 @@ body {
   animation: floatImage 4s ease-in-out infinite;
   transition: transform 0.5s ease, filter 0.5s ease;
 }
-.carousel-proteins .carousel-slide .carousel-image img:hover {
+.carousel-proteins .carousel-slide .carousel-image img:hover, .carousel-creatinas .carousel-slide .carousel-image img:hover {
   transform: scale(1.05);
   filter: brightness(1.1);
 }
-.carousel-proteins .carousel-slide h3 {
+.carousel-proteins .carousel-slide h3, .carousel-creatinas .carousel-slide h3 {
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 0.3rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
-.carousel-proteins .carousel-slide p {
+.carousel-proteins .carousel-slide p, .carousel-creatinas .carousel-slide p {
   font-size: 1.1rem;
   font-weight: 400;
   max-width: 520px;
 }
-.carousel-proteins .carousel-arrow {
+.carousel-proteins .carousel-arrow, .carousel-creatinas .carousel-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -420,24 +529,24 @@ body {
   opacity: 0.4;
   z-index: 3;
 }
-.carousel-proteins .carousel-arrow:hover {
+.carousel-proteins .carousel-arrow:hover, .carousel-creatinas .carousel-arrow:hover {
   background-color: rgba(255, 255, 255, 0.3);
   opacity: 1;
   transform: translateY(-50%) scale(1.1);
 }
-.carousel-proteins .carousel-arrow.left {
+.carousel-proteins .carousel-arrow.left, .carousel-creatinas .carousel-arrow.left {
   left: 1.5rem;
 }
-.carousel-proteins .carousel-arrow.right {
+.carousel-proteins .carousel-arrow.right, .carousel-creatinas .carousel-arrow.right {
   right: 1.5rem;
 }
-.carousel-proteins .carousel-dots {
+.carousel-proteins .carousel-dots, .carousel-creatinas .carousel-dots {
   display: flex;
   justify-content: center;
   gap: 0.6rem;
   margin-top: 1.5rem;
 }
-.carousel-proteins .carousel-dots .dot {
+.carousel-proteins .carousel-dots .dot, .carousel-creatinas .carousel-dots .dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -445,11 +554,11 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.carousel-proteins .carousel-dots .dot.active {
+.carousel-proteins .carousel-dots .dot.active, .carousel-creatinas .carousel-dots .dot.active {
   background-color: #fff;
   transform: scale(1.3);
 }
-.carousel-proteins .carousel-dots .dot:hover {
+.carousel-proteins .carousel-dots .dot:hover, .carousel-creatinas .carousel-dots .dot:hover {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
@@ -480,6 +589,32 @@ body {
 
 .bg-parrot {
   background: linear-gradient(120deg, rgb(70, 157, 112), rgb(243, 192, 162));
+  background-size: 300% 300%;
+  animation: gradientWave 10s ease-in-out infinite;
+}
+
+/* --- Carrusel de Creatinas --- */
+/* Fondos animados por creatina */
+.bg-creatina {
+  background: linear-gradient(120deg, rgb(53, 53, 53), rgb(235, 212, 212));
+  background-size: 300% 300%;
+  animation: gradientWave 10s ease-in-out infinite;
+}
+
+.bg-creatina-pink {
+  background: linear-gradient(120deg, rgb(244, 189, 224), rgb(235, 212, 212));
+  background-size: 300% 300%;
+  animation: gradientWave 10s ease-in-out infinite;
+}
+
+.bg-creatina-lemon {
+  background: linear-gradient(120deg, rgb(171, 215, 149), rgb(235, 212, 212));
+  background-size: 300% 300%;
+  animation: gradientWave 10s ease-in-out infinite;
+}
+
+.bg-creatina-watermelon {
+  background: linear-gradient(120deg, rgb(239, 141, 142), rgb(235, 212, 212));
   background-size: 300% 300%;
   animation: gradientWave 10s ease-in-out infinite;
 }

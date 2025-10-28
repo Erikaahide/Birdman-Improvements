@@ -60,3 +60,13 @@
       transform: translateY(0);
     }
   }
+
+    /* Animación de desplazamiento infinito */
+    @keyframes scrollBenefits {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
