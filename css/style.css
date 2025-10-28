@@ -52,10 +52,11 @@
     transform: translateY(0);
   }
 }
-html, body {
+html,
+body {
   font-family: "Poppins", sans-serif;
   background-color: rgb(254, 254, 254);
-  color: rgb(139, 139, 139);
+  color: rgb(101, 127, 189);
   margin: 0;
   padding: 0;
 }
@@ -85,9 +86,11 @@ html, body {
 }
 .btn-primary-birdman:hover {
   background-color: rgb(101, 127, 189);
+  color: rgb(242, 242, 242);
 }
 .btn-primary-birdman:focus {
   box-shadow: 0 0 0 0.25rem rgba(25, 75, 136, 0.35);
+  color: rgb(242, 242, 242);
 }
 
 .btn-fitmingo {
@@ -100,6 +103,51 @@ html, body {
 }
 .btn-fitmingo:focus {
   box-shadow: 0 0 0 0.25rem rgba(240, 138, 138, 0.35);
+}
+
+/* ==========================================================
+    BOTONES FIJOS DE NAVEGACIÓN
+   ========================================================== */
+.fixed-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  z-index: 1050;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  background-color: rgb(25, 75, 136);
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  /* Responsivo: oculta o ajusta en móvil */
+}
+.fixed-btn:hover {
+  background-color: rgb(101, 127, 189);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  color: white;
+}
+.fixed-btn.left {
+  left: 1.5rem;
+}
+.fixed-btn.right {
+  right: 1.5rem;
+}
+@media (max-width: 576px) {
+  .fixed-btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    bottom: 1rem;
+  }
+  .fixed-btn.left {
+    left: 1rem;
+  }
+  .fixed-btn.right {
+    right: 1rem;
+  }
 }
 
 /* Components / Sections */
