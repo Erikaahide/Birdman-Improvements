@@ -1,0 +1,84 @@
+.btn-base {
+    font-weight: 600;
+    padding: 0.5rem 1.25rem;
+    border-radius: 2rem;
+    font-family: $font-stack;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+  
+    &:focus {
+      outline: none;
+      box-shadow: $focus-shadow;
+    }
+  
+    i {
+      font-size: 1rem;
+    }
+  }
+  
+//   btn birdman basic
+  .btn-primary-birdman {
+    @extend .btn-base;
+    background-color: $primary;
+    color: white;
+    border: none;
+  
+    &:hover {
+      background-color: $secondary;
+    }
+  
+    &:focus {
+      box-shadow: $focus-shadow;
+    }
+  }
+  
+//   btn fitmingo
+  .btn-fitmingo {
+    @extend .btn-base;
+    background-color: $fitmingo;
+    color: white;
+    border: none;
+  
+    &:hover {
+      background-color: darken($fitmingo, 5%);
+    }
+  
+    &:focus {
+      box-shadow: $fitmingo-focus;
+    }
+  }
+  
+//   navbar icons
+  .navbar .bi {
+    font-size: 1.2rem;
+    color: $primary;
+    transition: color 0.3s ease;
+  
+    &:hover {
+      color: $secondary;
+    }
+  }
+
+//   align icons in buttons
+.navbar .btn,
+.navbar .bi {
+  vertical-align: middle;
+}
+  
+// navbar search input
+.navbar .form-control {
+    border-radius: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 0.875rem;
+    font-family: $font-stack;
+    transition: box-shadow 0.3s ease;
+  
+    &:focus {
+      box-shadow: $focus-shadow;
+      border-color: $primary;
+    }
+  }
+  

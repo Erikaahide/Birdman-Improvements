@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap 5.3.2 CSS CDN -->
+    <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+    <!-- Bootstrap Icons CDN -->
+    <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+  rel="stylesheet"
+/>
+<!-- Font awesome Icons -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+/>
+
+<!-- Google fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+    <!-- style complied css -->
+        <link rel="stylesheet" href="css/style.css">
+    <title>Birdman improvements</title>
+</head>
+
+<body>
+
+    <!-- Blue Topbar -->
+    <div class="topbar text-center py-2">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+          <span>Envío gratis en órdenes mayores a $599</span>
+          <a href="#" class="text-white">Suscríbete y ahorra 10%</a>
+        </div>
+      </div>
+  
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+        <div class="container">
+          <!-- Logo -->
+          <a class="navbar-brand fw-bold text-primary" href="#">
+            <img src="assets/logo.png" alt="Birdman" height="32" />
+          </a>
+  
+          <!-- Botón hamburguesa -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <!-- Enlaces -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item"><a class="nav-link" href="#">Productos</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Best Sellers</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Ofertas</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Packs</a></li>
+              <li class="nav-item">
+                <a class="btn btn-primary-birdman btn-sm ms-lg-3" href="#">Iniciar sesión</a>
+              </li>
+            </ul>
+  
+            <!-- Buscador y carrito -->
+            <form class="d-flex me-3">
+              <input class="form-control form-control-sm" type="search" placeholder="Buscar..." />
+            </form>
+  
+            <div class="d-flex align-items-center gap-3">
+              <a href="#"><i class="bi bi-person"></i></a>
+              <a href="#"><i class="bi bi-cart3"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+  
+      <!-- Hero principal -->
+      <section class="hero-section position-relative">
+        <img
+          src="assets/hero.webp"
+          alt="Hero"
+          class="img-fluid w-100"
+          style="max-height: 600px; object-fit: cover"
+        />
+  
+        <!-- Protein carrousel -->
+        <section class="carousel-proteins bg-falcon text-white py-5">
+            <div class="container text-center position-relative">
+              <h2 class="mb-4">Conoce nuestras aves</h2>
+          
+              <div class="carousel-inner" id="protein-carousel" aria-live="polite">
+                <div class="carousel-slide active" data-bg="falcon">
+                  <div class="carousel-image">
+                    <img src="assets/falcon.webp" alt="Falcon Protein">
+                  </div>
+                  <h3>Falcon Protein</h3>
+                  <p>Potencia tu día con la fuerza del halcón.</p>
+                </div>
+          
+                <div class="carousel-slide" data-bg="performance">
+                  <div class="carousel-image">
+                    <img src="assets/performance.webp" alt="Falcon Performance">
+                  </div>
+                  <h3>Falcon Performance</h3>
+                  <p>Rinde al máximo con nuestra fórmula avanzada.</p>
+                </div>
+          
+                <div class="carousel-slide" data-bg="fitmingo">
+                  <div class="carousel-image">
+                    <img src="assets/fitmingo.webp" alt="Fitmingo">
+                  </div>
+                  <h3>Fitmingo</h3>
+                  <p>Color, sabor y salud para tus entrenamientos.</p>
+                </div>
+          
+                <div class="carousel-slide" data-bg="peacock">
+                  <div class="carousel-image">
+                    <img src="assets/peacock.webp" alt="Peacock">
+                  </div>
+                  <h3>Peacock</h3>
+                  <p>Equilibra tu estilo de vida con elegancia.</p>
+                </div>
+          
+                <div class="carousel-slide" data-bg="parrot">
+                  <div class="carousel-image">
+                    <img src="assets/parrot.webp" alt="Parrot">
+                  </div>
+                  <h3>Parrot</h3>
+                  <p>Energía y vitalidad natural para ti.</p>
+                </div>
+              </div>
+          
+              <button class="carousel-arrow left" id="prev-slide" aria-label="Anterior">&lt;</button>
+              <button class="carousel-arrow right" id="next-slide" aria-label="Siguiente">&gt;</button>
+          
+              <div class="carousel-dots mt-4" id="carousel-dots"></div>
+            </div>
+          </section>
+          
+        <!-- Footer -->
+<footer class="site-footer text-white">
+    <div class="container py-5">
+      <div class="row gy-4">
+  
+        <!-- Categorías -->
+        <div class="col-6 col-md-3">
+          <h6 class="footer-heading">CATEGORÍAS</h6>
+          <ul class="footer-links">
+            <li><a href="#">Falcon Protein</a></li>
+            <li><a href="#">Falcon Performance</a></li>
+            <li><a href="#">Fitmingo</a></li>
+            <li><a href="#">Creatina</a></li>
+            <li><a href="#">Suplementos Wellness</a></li>
+          </ul>
+        </div>
+  
+        <!-- Nosotros -->
+        <div class="col-6 col-md-3">
+          <h6 class="footer-heading">SOBRE NOSOTROS</h6>
+          <ul class="footer-links">
+            <li><a href="#">Quiénes somos</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Influencers</a></li>
+            <li><a href="#">Vacantes</a></li>
+          </ul>
+        </div>
+  
+        <!-- Soporte -->
+        <div class="col-6 col-md-3">
+          <h6 class="footer-heading">SERVICIO AL CLIENTE</h6>
+          <ul class="footer-links">
+            <li><a href="#">Política de envíos</a></li>
+            <li><a href="#">Cambios y devoluciones</a></li>
+            <li><a href="#">Venta a Mayoreo</a></li>
+            <li><a href="#">Factura tu compra</a></li>
+          </ul>
+        </div>
+  
+        <!-- Newsletter -->
+        <div class="col-12 col-md-3">
+          <h6 class="footer-heading">NEWSLETTER</h6>
+          <p class="small">Suscríbete y obtén 10% de descuento en tu primera compra</p>
+          <form class="footer-form d-flex">
+            <input type="email" placeholder="Correo electrónico" class="form-control me-2" />
+            <button type="submit" class="btn-primary-birdman">
+              <i class="bi bi-arrow-right"></i>
+            </button>
+          </form>
+  
+          <div class="footer-social mt-3">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-tiktok"></i></a>
+          </div>
+        </div>
+      </div>
+  
+      <hr class="footer-divider my-4" />
+  
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small mb-3">
+        <div>&copy; Birdman, 2025</div>
+        <div class="footer-legal-links">
+          <a href="#">Aviso de privacidad</a>
+          <span class="mx-2">|</span>
+          <a href="#">Términos y Condiciones</a>
+        </div>
+      </div>
+    </div>
+  </footer>  
+
+        <!-- Botones absolute -->
+        <!-- Botón inferior izquierdo -->
+        <a
+          href="#"
+          class="btn btn-primary-birdman position-absolute"
+          style="bottom: 1rem; left: 1rem"
+        >
+        <i class="bi bi-chat-left-text"></i>
+             Asesórate con un experto
+        </a>
+  
+        <!-- Botón inferior derecho -->
+        <a
+          href="#"
+          class="btn btn-primary-birdman position-absolute"
+          style="bottom: 1rem; right: 1rem"
+        >
+        <i class="fas fa-feather"></i>
+          Conoce tu ave
+        </a>
+      </section>
+
+   <!-- Bootstrap 5.3.2 Bundle JS CDN (con Popper incluido) -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="./js/main.js"></script>
+
+</body>
+
+</html>

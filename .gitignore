@@ -1,0 +1,12 @@
+# Node
+node_modules/
+package-lock.json
+
+# SASS
+*.css.map
+
+# System
+.DS_Store
+
+# VS Code
+.vscode/

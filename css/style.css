@@ -1,0 +1,367 @@
+@charset "UTF-8";
+.hero-section {
+  background-color: rgb(25, 75, 136);
+  color: rgb(254, 254, 254);
+  font-family: Helvetica, sans-serif;
+}
+
+.topbar {
+  background-color: rgb(25, 75, 136);
+  color: white;
+  font-size: 0.875rem;
+}
+.topbar a {
+  color: white;
+  text-decoration: underline;
+}
+.topbar a:hover {
+  color: white;
+}
+
+.topbar .container {
+  justify-content: center;
+}
+@media (min-width: 576px) {
+  .topbar .container {
+    justify-content: space-between;
+  }
+}
+
+.navbar {
+  background-color: rgb(254, 254, 254);
+}
+.navbar .nav-link {
+  color: rgb(25, 75, 136);
+}
+.navbar .nav-link:hover {
+  color: rgb(101, 127, 189);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(254, 254, 254);
+  color: rgb(139, 139, 139);
+}
+
+.carousel-proteins {
+  position: relative;
+  overflow: hidden;
+  transition: background 1s ease-in-out;
+  min-height: 520px;
+  font-family: "Poppins", sans-serif;
+  /* Flechas laterales */
+  /* Dots indicadores */
+}
+.carousel-proteins h2 {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.carousel-proteins .carousel-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+.carousel-proteins .carousel-slide {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.8s ease;
+}
+.carousel-proteins .carousel-slide.active {
+  display: flex;
+  opacity: 1;
+  transform: scale(1);
+  animation: fadeInUp 0.8s ease-in-out forwards;
+}
+.carousel-proteins .carousel-slide .carousel-image {
+  margin-bottom: 1rem;
+}
+.carousel-proteins .carousel-slide .carousel-image img {
+  width: clamp(220px, 35vw, 420px);
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  animation: floatImage 4s ease-in-out infinite;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+.carousel-proteins .carousel-slide .carousel-image img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+.carousel-proteins .carousel-slide h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.carousel-proteins .carousel-slide p {
+  font-size: 1.1rem;
+  font-weight: 400;
+  max-width: 520px;
+}
+.carousel-proteins .carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: none;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.4;
+  z-index: 3;
+}
+.carousel-proteins .carousel-arrow:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+}
+.carousel-proteins .carousel-arrow.left {
+  left: 1.5rem;
+}
+.carousel-proteins .carousel-arrow.right {
+  right: 1.5rem;
+}
+.carousel-proteins .carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+.carousel-proteins .carousel-dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.carousel-proteins .carousel-dots .dot.active {
+  background-color: #fff;
+  transform: scale(1.3);
+}
+.carousel-proteins .carousel-dots .dot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Gradientes con movimiento */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* Animación con movimiento diagonal tipo oleaje */
+@keyframes gradientWave {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* Fondos animados por proteína */
+.bg-falcon {
+  background: linear-gradient(120deg, rgb(69, 127, 160), rgb(162, 143, 99));
+  background-size: 300% 300%;
+  animation: gradientWave 10s ease-in-out infinite;
+}
+
+.bg-performance {
+  background: linear-gradient(120deg, rgb(70, 67, 64), rgb(128, 80, 55));
+  background-size: 300% 300%;
+  animation: gradientWave 10s ease-in-out infinite;
+}
+
+.bg-fitmingo {
+  background: linear-gradient(120deg, rgb(240, 138, 138), rgb(150, 40, 33));
+  background-size: 300% 300%;
+  animation: gradientWave 10s ease-in-out infinite;
+}
+
+.bg-peacock {
+  background: linear-gradient(120deg, rgb(61, 102, 162), rgb(241, 232, 188));
+  background-size: 300% 300%;
+  animation: gradientWave 10s ease-in-out infinite;
+}
+
+.bg-parrot {
+  background: linear-gradient(120deg, rgb(111, 232, 188), rgb(243, 192, 162));
+  background-size: 300% 300%;
+  animation: gradientWave 10s ease-in-out infinite;
+}
+
+/* Footer con imagen, overlay y fade-in al hacer scroll */
+.site-footer {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  font-family: Helvetica, sans-serif;
+  background: url("../assets/footer.webp") center/cover no-repeat;
+  background-attachment: fixed;
+  opacity: 0;
+  transform: translateY(60px) scale(0.98);
+  filter: blur(8px);
+  transition: opacity 1.5s ease, transform 1.5s ease, filter 1.5s ease;
+  /*(links, form, etc.) */
+}
+.site-footer.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(25, 75, 136, 0.55);
+  z-index: 0;
+}
+.site-footer .container {
+  position: relative;
+  z-index: 1;
+}
+.site-footer .footer-heading {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+.site-footer .footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.site-footer .footer-links li {
+  margin-bottom: 0.4rem;
+}
+.site-footer .footer-links li a {
+  color: white;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+.site-footer .footer-links li a:hover {
+  color: rgb(101, 127, 189);
+}
+.site-footer .footer-form input {
+  border-radius: 2rem;
+  padding: 0.4rem 1rem;
+  font-size: 0.875rem;
+}
+.site-footer .footer-form button {
+  background-color: white;
+  color: rgb(25, 75, 136);
+}
+.site-footer .footer-form button:hover {
+  background-color: rgb(242, 242, 242);
+}
+.site-footer .footer-social a {
+  color: white;
+  font-size: 1.2rem;
+  margin-right: 0.75rem;
+}
+.site-footer .footer-social a:hover {
+  color: rgb(101, 127, 189);
+}
+.site-footer .footer-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.site-footer .footer-legal-links a {
+  color: white;
+  text-decoration: none;
+}
+.site-footer .footer-legal-links a:hover {
+  text-decoration: underline;
+}
+
+.btn-base, .btn-fitmingo, .btn-primary-birdman, .site-footer .footer-form button {
+  font-weight: 600;
+  padding: 0.5rem 1.25rem;
+  border-radius: 2rem;
+  font-family: Helvetica, sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+.btn-base:focus, .btn-fitmingo:focus, .btn-primary-birdman:focus, .site-footer .footer-form button:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.25rem rgba(25, 75, 136, 0.35);
+}
+.btn-base i, .btn-fitmingo i, .btn-primary-birdman i, .site-footer .footer-form button i {
+  font-size: 1rem;
+}
+
+.btn-primary-birdman {
+  background-color: rgb(25, 75, 136);
+  color: white;
+  border: none;
+}
+.btn-primary-birdman:hover {
+  background-color: rgb(101, 127, 189);
+}
+.btn-primary-birdman:focus {
+  box-shadow: 0 0 0 0.25rem rgba(25, 75, 136, 0.35);
+}
+
+.btn-fitmingo {
+  background-color: rgb(240, 138, 138);
+  color: white;
+  border: none;
+}
+.btn-fitmingo:hover {
+  background-color: rgb(237.1022727273, 115.3977272727, 115.3977272727);
+}
+.btn-fitmingo:focus {
+  box-shadow: 0 0 0 0.25rem rgba(240, 138, 138, 0.35);
+}
+
+.navbar .bi {
+  font-size: 1.2rem;
+  color: rgb(25, 75, 136);
+  transition: color 0.3s ease;
+}
+.navbar .bi:hover {
+  color: rgb(101, 127, 189);
+}
+
+.navbar .btn,
+.navbar .bi {
+  vertical-align: middle;
+}
+
+.navbar .form-control {
+  border-radius: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 0.875rem;
+  font-family: Helvetica, sans-serif;
+  transition: box-shadow 0.3s ease;
+}
+.navbar .form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(25, 75, 136, 0.35);
+  border-color: rgb(25, 75, 136);
+}/*# sourceMappingURL=style.css.map */
