@@ -1,0 +1,49 @@
+.reviews-section {
+    background-color: $gray;
+    font-family: $font-stack;
+    color: $secondary;
+  
+    .review-card {
+      border: none;
+      transition: all 0.3s ease;
+      border-radius: 1rem;
+      overflow: hidden;
+      background-color: $background-color;
+  
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba($primary, 0.15);
+      }
+  
+      .card-body {
+        .card-title {
+          font-weight: 600;
+        }
+  
+        .card-text {
+          font-size: 0.9rem;
+          color: $text-gray;
+        }
+  
+        .stars {
+          font-size: 1.1rem;
+          color: $creatina-watermelon;
+        }
+      }
+  
+      img {
+        height: 300px;
+        object-fit: cover;
+      }
+    }
+  
+    .review-carousel::-webkit-scrollbar {
+      height: 8px;
+    }
+  
+    .review-carousel::-webkit-scrollbar-thumb {
+      background: $secondary;
+      border-radius: 4px;
+    }
+  }
+  

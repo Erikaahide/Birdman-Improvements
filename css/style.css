@@ -691,4 +691,44 @@ body {
 }
 .site-footer .footer-legal-links a:hover {
   text-decoration: underline;
+}
+
+.reviews-section {
+  background-color: rgb(242, 242, 242);
+  font-family: "Poppins", sans-serif;
+  color: rgb(101, 127, 189);
+}
+.reviews-section .review-card {
+  border: none;
+  transition: all 0.3s ease;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: rgb(254, 254, 254);
+}
+.reviews-section .review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(25, 75, 136, 0.15);
+}
+.reviews-section .review-card .card-body .card-title {
+  font-weight: 600;
+}
+.reviews-section .review-card .card-body .card-text {
+  font-size: 0.9rem;
+  color: rgb(139, 139, 139);
+}
+.reviews-section .review-card .card-body .stars {
+  font-size: 1.1rem;
+  color: rgb(239, 141, 142);
+}
+.reviews-section .review-card img {
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.reviews-section .review-carousel::-webkit-scrollbar {
+  height: 8px;
+}
+.reviews-section .review-carousel::-webkit-scrollbar-thumb {
+  background: rgb(101, 127, 189);
+  border-radius: 4px;
 }/*# sourceMappingURL=style.css.map */
