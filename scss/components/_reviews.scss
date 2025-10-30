@@ -1,49 +1,117 @@
 .reviews-section {
     background-color: $gray;
     font-family: $font-stack;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
     color: $secondary;
   
+    /* Carrusel con fade en los bordes */
+    .review-carousel {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 1rem;
+      padding: 0 2rem 1rem;
+      overflow-x: auto;
+      overflow-y: hidden; // evita cortes 
+      scroll-snap-type: x mandatory;
+  
+      /* Degradado lateral (fade) */
+      -webkit-mask-image: linear-gradient(
+        to right,
+        rgba(0,0,0,0) 0,
+        rgba(0,0,0,1) 40px,
+        rgba(0,0,0,1) calc(100% - 40px),
+        rgba(0,0,0,0) 100%
+      );
+              mask-image: linear-gradient(
+        to right,
+        rgba(0,0,0,0) 0,
+        rgba(0,0,0,1) 40px,
+        rgba(0,0,0,1) calc(100% - 40px),
+        rgba(0,0,0,0) 100%
+      );
+    }
+  
+    /* Tarjeta con “elevación” sin desplazar el contenedor */
     .review-card {
       border: none;
-      transition: all 0.3s ease;
       border-radius: 1rem;
-      overflow: hidden;
       background-color: $background-color;
+      box-shadow: 0 4px 10px rgba($primary, 0.08);
+      width: 280px;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      position: relative;
+      overflow: hidden; // clip para el zoom interno de la imagen
+  
+      /* Efecto hover sin overflow externo */
+      transition: box-shadow 0.35s ease, outline-color 0.35s ease;
+  
+      /* Anillo de foco suave (no ocupa layout) */
+      outline: 2px solid transparent;
+      outline-offset: -2px;
   
       &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba($primary, 0.15);
+        box-shadow: 0 10px 24px rgba($primary, 0.15);
       }
   
-      .card-body {
-        .card-title {
-          font-weight: 600;
-        }
-  
-        .card-text {
-          font-size: 0.9rem;
-          color: $text-gray;
-        }
-  
-        .stars {
-          font-size: 1.1rem;
-          color: $creatina-watermelon;
-        }
+      /* Brillo temático con pseudo-elemento dentro (no desborda) */
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.35s ease;
       }
+      &:hover::after { opacity: 1; }
   
       img {
         height: 300px;
         object-fit: cover;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        transform: scale(1);               /* zoom interno sutil */
+        transition: transform 0.45s ease;
       }
+      &:hover img { transform: scale(1.04); }
+  
+      .card-body {
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        transition: transform 0.35s ease;  /* micro-movimiento interno */
+      }
+      &:hover .card-body { transform: translateY(-4px); }
+  
+      .card-title { font-weight: 600; }
+      .card-text  { font-size: 0.9rem; color: $text-gray; }
+      .stars      { font-size: 1.1rem; color: $fitmingo; }
     }
   
-    .review-carousel::-webkit-scrollbar {
-      height: 8px;
+    /* Temas de color (glow + outline) */
+    .review-card.falcon {
+      &:hover { outline-color: rgba($falcon, .35); }
+      &::after { box-shadow: inset 0 0 0 2px rgba($falcon,.25); }
+    }
+    .review-card.creatina {
+      &:hover { outline-color: rgba($creatina, .35); }
+      &::after { box-shadow: inset 0 0 0 2px rgba($creatina,.25); }
+    }
+    .review-card.parrot {
+      &:hover { outline-color: rgba($parrot, .35); }
+      &::after { box-shadow: inset 0 0 0 2px rgba($parrot,.25); }
+    }
+    .review-card.fitmingo {
+      &:hover { outline-color: rgba($fitmingo, .35); }
+      &::after { box-shadow: inset 0 0 0 2px rgba($fitmingo,.25); }
     }
   
+    /* Scrollbar */
+    .review-carousel::-webkit-scrollbar { height: 8px; }
     .review-carousel::-webkit-scrollbar-thumb {
-      background: $secondary;
-      border-radius: 4px;
+      background: $secondary; border-radius: 4px;
     }
+    .review-carousel::-webkit-scrollbar-track { background: lighten($gray, 2%); }
   }
   

@@ -696,34 +696,112 @@ body {
 .reviews-section {
   background-color: rgb(242, 242, 242);
   font-family: "Poppins", sans-serif;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   color: rgb(101, 127, 189);
+  /* Carrusel con fade en los bordes */
+  /* Tarjeta con “elevación” sin desplazar el contenedor */
+  /* Temas de color (glow + outline) */
+  /* Scrollbar */
+}
+.reviews-section .review-carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  padding: 0 2rem 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  /* Degradado lateral (fade) */
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgb(0, 0, 0) 40px, rgb(0, 0, 0) calc(100% - 40px), rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgb(0, 0, 0) 40px, rgb(0, 0, 0) calc(100% - 40px), rgba(0, 0, 0, 0) 100%);
 }
 .reviews-section .review-card {
   border: none;
-  transition: all 0.3s ease;
   border-radius: 1rem;
-  overflow: hidden;
   background-color: rgb(254, 254, 254);
+  box-shadow: 0 4px 10px rgba(25, 75, 136, 0.08);
+  width: 280px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
+  /* Efecto hover sin overflow externo */
+  transition: box-shadow 0.35s ease, outline-color 0.35s ease;
+  /* Anillo de foco suave (no ocupa layout) */
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+  /* Brillo temático con pseudo-elemento dentro (no desborda) */
 }
 .reviews-section .review-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(25, 75, 136, 0.15);
+  box-shadow: 0 10px 24px rgba(25, 75, 136, 0.15);
 }
-.reviews-section .review-card .card-body .card-title {
-  font-weight: 600;
+.reviews-section .review-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
 }
-.reviews-section .review-card .card-body .card-text {
-  font-size: 0.9rem;
-  color: rgb(139, 139, 139);
-}
-.reviews-section .review-card .card-body .stars {
-  font-size: 1.1rem;
-  color: rgb(239, 141, 142);
+.reviews-section .review-card:hover::after {
+  opacity: 1;
 }
 .reviews-section .review-card img {
   height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  transform: scale(1); /* zoom interno sutil */
+  transition: transform 0.45s ease;
+}
+.reviews-section .review-card:hover img {
+  transform: scale(1.04);
+}
+.reviews-section .review-card .card-body {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  transition: transform 0.35s ease; /* micro-movimiento interno */
+}
+.reviews-section .review-card:hover .card-body {
+  transform: translateY(-4px);
+}
+.reviews-section .review-card .card-title {
+  font-weight: 600;
+}
+.reviews-section .review-card .card-text {
+  font-size: 0.9rem;
+  color: rgb(139, 139, 139);
+}
+.reviews-section .review-card .stars {
+  font-size: 1.1rem;
+  color: rgb(240, 138, 138);
+}
+.reviews-section .review-card.falcon:hover {
+  outline-color: rgba(69, 127, 160, 0.35);
+}
+.reviews-section .review-card.falcon::after {
+  box-shadow: inset 0 0 0 2px rgba(69, 127, 160, 0.25);
+}
+.reviews-section .review-card.creatina:hover {
+  outline-color: rgba(53, 53, 53, 0.35);
+}
+.reviews-section .review-card.creatina::after {
+  box-shadow: inset 0 0 0 2px rgba(53, 53, 53, 0.25);
+}
+.reviews-section .review-card.parrot:hover {
+  outline-color: rgba(70, 157, 112, 0.35);
+}
+.reviews-section .review-card.parrot::after {
+  box-shadow: inset 0 0 0 2px rgba(70, 157, 112, 0.25);
+}
+.reviews-section .review-card.fitmingo:hover {
+  outline-color: rgba(240, 138, 138, 0.35);
+}
+.reviews-section .review-card.fitmingo::after {
+  box-shadow: inset 0 0 0 2px rgba(240, 138, 138, 0.25);
 }
 .reviews-section .review-carousel::-webkit-scrollbar {
   height: 8px;
@@ -731,4 +809,7 @@ body {
 .reviews-section .review-carousel::-webkit-scrollbar-thumb {
   background: rgb(101, 127, 189);
   border-radius: 4px;
+}
+.reviews-section .review-carousel::-webkit-scrollbar-track {
+  background: rgb(247.1, 247.1, 247.1);
 }/*# sourceMappingURL=style.css.map */
