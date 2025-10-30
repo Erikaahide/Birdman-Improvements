@@ -812,4 +812,79 @@ body {
 }
 .reviews-section .review-carousel::-webkit-scrollbar-track {
   background: rgb(247.1, 247.1, 247.1);
+}
+
+.faq-section {
+  background-color: rgb(254, 254, 254);
+  font-family: "Poppins", sans-serif;
+  color: rgb(69, 127, 160);
+  /* Borde de color temático */
+}
+.faq-section .faq-list {
+  max-width: 100%;
+}
+.faq-section .faq-item {
+  background: rgb(242, 242, 242);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(25, 75, 136, 0.05);
+  transition: all 0.3s ease;
+}
+.faq-section .faq-item.active {
+  box-shadow: 0 8px 20px rgba(25, 75, 136, 0.15);
+  background-color: rgb(247.1, 247.1, 247.1);
+}
+.faq-section .faq-item .faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 1.25rem 1.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  color: rgb(53, 53, 53);
+}
+.faq-section .faq-item .faq-question i {
+  transition: transform 0.3s ease;
+}
+.faq-section .faq-item .faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  color: rgb(139, 139, 139);
+  font-size: 0.95rem;
+  padding: 0 1.5rem;
+  line-height: 1.6;
+  transition: all 0.4s ease;
+  opacity: 0;
+}
+.faq-section .faq-item.active .faq-answer {
+  max-height: 300px;
+  opacity: 1;
+  padding-bottom: 1.25rem;
+}
+.faq-section .faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
+.faq-section .faq-item.falcon.active {
+  border-left: 6px solid rgb(69, 127, 160);
+}
+.faq-section .faq-item.creatina.active {
+  border-left: 6px solid rgb(53, 53, 53);
+}
+.faq-section .faq-item.parrot.active {
+  border-left: 6px solid rgb(70, 157, 112);
+}
+.faq-section .faq-item.fitmingo.active {
+  border-left: 6px solid rgb(240, 138, 138);
+}
+.faq-section .faq-item.peacock.active {
+  border-left: 6px solid rgb(163, 177, 178);
+}
+.faq-section .faq-item.performance.active {
+  border-left: 6px solid rgb(70, 67, 64);
 }/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,72 @@
+.faq-section {
+    background-color: $background-color;
+    font-family: $font-stack;
+    color: $falcon;
+  
+    .faq-list {
+      max-width: 100%;
+    }
+  
+    .faq-item {
+      background: $gray;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba($primary, 0.05);
+      transition: all 0.3s ease;
+  
+      &.active {
+        box-shadow: 0 8px 20px rgba($primary, 0.15);
+        background-color: lighten($gray, 2%);
+      }
+  
+      .faq-question {
+        width: 100%;
+        background: none;
+        border: none;
+        text-align: left;
+        padding: 1.25rem 1.5rem;
+        font-weight: 600;
+        font-size: 1.1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        color: $creatina;
+  
+        i {
+          transition: transform 0.3s ease;
+        }
+      }
+  
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        color: $text-gray;
+        font-size: 0.95rem;
+        padding: 0 1.5rem;
+        line-height: 1.6;
+        transition: all 0.4s ease;
+        opacity: 0;
+      }
+  
+      &.active .faq-answer {
+        max-height: 300px;
+        opacity: 1;
+        padding-bottom: 1.25rem;
+      }
+  
+      &.active .faq-question i {
+        transform: rotate(180deg);
+      }
+    }
+  
+    /* Borde de color temático */
+    .faq-item.falcon.active { border-left: 6px solid $falcon; }
+    .faq-item.creatina.active { border-left: 6px solid $creatina; }
+    .faq-item.parrot.active { border-left: 6px solid $parrot; }
+    .faq-item.fitmingo.active { border-left: 6px solid $fitmingo; }
+    .faq-item.peacock.active { border-left: 6px solid $peacock; }
+    .faq-item.performance.active { border-left: 6px solid $performance; }
+  }
+  
